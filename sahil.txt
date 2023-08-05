@@ -1,0 +1,212 @@
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git
+$ git init
+Initialized empty Git repository in E:/Unity Projects/git/.git/
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git add .
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   vedant.txt
+
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git commit -a -m "my first yo"
+[master (root-commit) 2d38053] my first yo
+ 1 file changed, 1 insertion(+)
+ create mode 100644 vedant.txt
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   vedant.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   vedant.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        sahil.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git add .
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git commit -a -m "sahil agiya"
+[master f3361ce] sahil agiya
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ create mode 100644 sahil.txt
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git push
+fatal: No configured push destination.
+Either specify the URL from the command-line or configure a remote repository using
+
+    git remote add <name> <url>
+
+and then push using the remote name
+
+    git push <name>
+
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git remote add origin https://github.com/vedantshinde2003/Cooking-game.git
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$  git push --set-upstream origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'https://github.com/vedantshinde2003/Cooking-game.git'
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$  git push --set-upstream origin master
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (7/7), 501 bytes | 501.00 KiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/vedantshinde2003/Cooking-game/pull/new/master
+remote:
+To https://github.com/vedantshinde2003/Cooking-game.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git pull
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 1.20 KiB | 11.00 KiB/s, done.
+From https://github.com/vedantshinde2003/Cooking-game
+ * [new branch]      main       -> origin/main
+Already up to date.
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git checkout ggs
+error: pathspec 'ggs' did not match any file(s) known to git
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git branch ggs
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git checkout ggs
+Switched to branch 'ggs'
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (ggs)
+$ git add .
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (ggs)
+$ git commit -a -m "panga hogiya bhai"
+[ggs 103d6c9] panga hogiya bhai
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 panga.txt
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (ggs)
+$ git push
+fatal: The current branch ggs has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ggs
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (ggs)
+$ git push --set-upstream origin ggs
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 300 bytes | 300.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'ggs' on GitHub by visiting:
+remote:      https://github.com/vedantshinde2003/Cooking-game/pull/new/ggs
+remote:
+To https://github.com/vedantshinde2003/Cooking-game.git
+ * [new branch]      ggs -> ggs
+branch 'ggs' set up to track 'origin/ggs'.
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (ggs)
+$ git pull
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), 630 bytes | 18.00 KiB/s, done.
+From https://github.com/vedantshinde2003/Cooking-game
+   f3361ce..79cdde5  master     -> origin/master
+Your configuration specifies to merge with the ref 'refs/heads/ggs'
+from the remote, but no such ref was fetched.
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (ggs)
+$ git checkout
+A       palak
+M       sahil.txt
+Your branch is up to date with 'origin/ggs'.
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (ggs)
+$ git checkout master
+Switched to branch 'master'
+A       palak
+M       sahil.txt
+Your branch is behind 'origin/master' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git pull
+Updating f3361ce..79cdde5
+Fast-forward
+ panga.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 panga.txt
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ git stash
+Saved working directory and index state WIP on master: 79cdde5 Merge pull request #1 from vedantshinde2003/ggs
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$ ^C
+
+Vedant Shinde@DESKTOP-IRNE9TJ MINGW64 /e/Unity Projects/git (master)
+$
+
