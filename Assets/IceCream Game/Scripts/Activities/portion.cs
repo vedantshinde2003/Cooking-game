@@ -70,8 +70,14 @@ public class portion : interactables
     }
 
 
-   
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.transform.CompareTag("trigger")  && !isTaskDone())
+        {
+            transform.position = other.transform.GetChild(0).position;
+        }
 
+    }
     private void OnTriggerStay(Collider other)
     {
         if(other.transform.CompareTag("trigger")  && !isTaskDone())

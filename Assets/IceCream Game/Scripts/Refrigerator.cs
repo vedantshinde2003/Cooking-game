@@ -78,6 +78,22 @@ public class Refrigerator : MonoBehaviour
     }
 
 
+    public void closeBig()
+    {
+        if(bigDoorOpen)
+        {
+            intreactBig();
+        }
+    }
+    public void closeSmall()
+    {
+        if(smallDoor)
+        {
+            interactSmall();
+        }
+    }
+
+
 
 
 
@@ -132,4 +148,7 @@ public class Refrigerator : MonoBehaviour
         obj.rotation = rotation;       
         yield break;
     }
+
+
+    
 }

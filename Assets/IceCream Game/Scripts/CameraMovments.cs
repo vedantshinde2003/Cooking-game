@@ -101,11 +101,11 @@ public class CameraMovments : MonoBehaviour
 
 
 
-    private IEnumerator ShiftCameraRutine( Vector3 target, float speed,float finalFOv)
+    private IEnumerator ShiftCameraRutine( Vector3 target, float time,float finalFOv)
     {
          // Adjust FOV
         float elapsedTime = 0f;
-        float duration = 1;
+        float duration = time;
        
 
         while (elapsedTime < duration)
@@ -125,7 +125,7 @@ public class CameraMovments : MonoBehaviour
 
         // Calculate the distance and time required for the movement
         float distance = Vector3.Distance(startPosition, targetPosition);
-        float duration_m = speed;
+        float duration_m = time;
 
         // Move towards the target position
         float t = 0.0f;
@@ -144,10 +144,10 @@ public class CameraMovments : MonoBehaviour
 
        
         float elapsedTime_last = 0f;
-        float duration_last = 2;
+        float duration_last = time;
       
 
-        while (elapsedTime_last < duration_last)
+        while (elapsedTime_last < duration_last + 0.1f)
         {
             virtualCamera.m_Lens.FieldOfView = Mathf.MoveTowards( virtualCamera.m_Lens.FieldOfView, finalFOv, elapsedTime_last / duration_last);
             elapsedTime_last += Time.deltaTime;
@@ -155,7 +155,7 @@ public class CameraMovments : MonoBehaviour
         }
 
       
-          virtualCamera.m_Lens.FieldOfView  = finalFOv;
+        
     }
 
 
@@ -177,13 +177,11 @@ public class CameraMovments : MonoBehaviour
     
     }
 
-    private IEnumerator ShiftCameraTrackRutine(Vector3 target, float Y ,float speed,float finalFOv)
+    private IEnumerator ShiftCameraTrackRutine(Vector3 target, float Y ,float time,float finalFOv)
     {
         //////////////////// // Adjust FOV
         float elapsedTime = 0f;
-        float duration = 1;
-       
-
+        float duration = time;
         while (elapsedTime < duration)
         {
             virtualCamera.m_Lens.FieldOfView = Mathf.MoveTowards( virtualCamera.m_Lens.FieldOfView, tranferingFov, elapsedTime / duration);
@@ -201,7 +199,7 @@ public class CameraMovments : MonoBehaviour
         Vector3 startPosition = Aim.position;
 
         float distance = Vector3.Distance(startPosition, targetPosition);
-        float duration_m = speed;
+        float duration_m = time;
         // Move towards the target position
         float t = 0.0f;
         while (t < 1.0f)
@@ -226,7 +224,7 @@ public class CameraMovments : MonoBehaviour
         Vector3 TargetY = new Vector3(track.position.x,Y,track.position.z);
         Vector3 startY = track.position;
 
-        float duration_y = speed;
+        float duration_y = time;
         // Move towards the target position
         float elapsedTime_y = 0.0f;
         while (elapsedTime_y < 1.0f)
@@ -247,11 +245,12 @@ public class CameraMovments : MonoBehaviour
 
 
 
+
         float elapsedTime_last = 0f;
-        float duration_last = 2;
+        float duration_last = time;
       
 
-        while (elapsedTime_last < duration_last)
+        while (elapsedTime_last < duration_last + 0.1f)
         {
             virtualCamera.m_Lens.FieldOfView = Mathf.MoveTowards( virtualCamera.m_Lens.FieldOfView, finalFOv, elapsedTime_last / duration_last);
             elapsedTime_last += Time.deltaTime;
@@ -259,7 +258,7 @@ public class CameraMovments : MonoBehaviour
         }
 
       
-        virtualCamera.m_Lens.FieldOfView  = finalFOv;
+       // virtualCamera.m_Lens.FieldOfView  = finalFOv;
     }
 
     

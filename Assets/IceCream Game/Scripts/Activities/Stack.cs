@@ -28,7 +28,9 @@ public class Stack : MonoBehaviour
         {
             isSlective = false;
             StartCoroutine(FridgeRutine());
-            setGlow(false);
+
+            if(glow != null)
+                setGlow(false);
         }
     }
 
@@ -47,7 +49,7 @@ public class Stack : MonoBehaviour
         }
 
         StartCoroutine(MoveObjectCoroutine(transform,outPosition,true));
-        yield return new WaitForSeconds(1);
+
 
       
        
@@ -64,7 +66,7 @@ public class Stack : MonoBehaviour
 
        
         float t = 0.0f;
-        while (t < 1.0f)
+        while (t < 1)
         {
             t += Time.deltaTime/2 ;
             obj.position = Vector3.Lerp(obj.position, targetPosition, t);
@@ -77,9 +79,15 @@ public class Stack : MonoBehaviour
 
         if(endFlag)
         {
-            Instantiate(groundHit,vfx_point.position,Quaternion.identity);
-            GetComponent<interactables>().setup();
+            if(groundHit != null)
+            {
+                Instantiate(groundHit,vfx_point.position,Quaternion.identity);
+            }
+
+            if( GetComponent<interactables>())
+                GetComponent<interactables>().setup();
             Destroy(this);
+          
         }      
         yield break;
     }

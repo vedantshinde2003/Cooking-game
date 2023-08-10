@@ -118,15 +118,15 @@ public class LevelMannger : MonoBehaviour
         switch(currentScene.camera.actions)
         {
             case Scenario.cameraActions.AxesShift:
-                CameraMovments.instnace.changeCamera(currentScene.camera.cameraTarget.position,0.5f,currentScene.camera.zoom);
+                CameraMovments.instnace.changeCamera(currentScene.camera.cameraTarget.position,1,currentScene.camera.zoom);
                 break;
 
             case Scenario.cameraActions.normalShift:
-                CameraMovments.instnace.normalShift(currentScene.camera.cameraTarget.position,0.5f);
+                CameraMovments.instnace.normalShift(currentScene.camera.cameraTarget.position,1);
                 break;
 
             case Scenario.cameraActions.TrackShift:
-                CameraMovments.instnace.TrackShift(currentScene.camera.cameraTarget.position,currentScene.camera.TrackShift_y,0.5f, currentScene.camera.zoom);
+                CameraMovments.instnace.TrackShift(currentScene.camera.cameraTarget.position,currentScene.camera.TrackShift_y,1, currentScene.camera.zoom);
                 break;
             
             case Scenario.cameraActions.setFollow:
